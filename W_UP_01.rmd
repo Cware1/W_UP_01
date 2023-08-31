@@ -77,6 +77,8 @@ favstats(pushups~position,data=mydata)
 ```{r}
 t.test(pushups~position,data=mydata)
 ```
+p-value = 0.000009421
+
 
 # Discussion and Conclusion
 
