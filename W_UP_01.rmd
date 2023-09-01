@@ -11,10 +11,10 @@ The report structure should include five sections.  see below
 
 
 
-```{r include=TRUE,echo=FALSE}
+```{r include=FALSE,echo=FALSE}
 require(tigerstats)
 require(tidyverse)
-mydata <- read.csv(file="pushups.csv")
+mydata <- read.csv(file = "pushups.csv", fileEncoding = "UTF-8")
 ```
 
 # Introduction
@@ -44,13 +44,13 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 
 ## Now add in boxplot
 
-```{r}
+```{r include=TRUE,echo=FALSE}
 ggplot(mydata, aes(x = position, y = pushups)) +
   geom_boxplot() +
   labs(title = "Pushup Positions Comparison",
        x = "Position",
        y = "Number of Pushups") +
-  theme(plot.title = element_text(hjust = 0.5, size = 18))
+  theme(plot.title = element_text(hjust = 0.5, size = 16))
 ```
 
 
@@ -71,6 +71,7 @@ favstats(pushups~position,data=mydata)
 ```{r}
 t.test(pushups~position,data=mydata)
 ```
+
 p-value = 0.000009421
 
 
@@ -78,3 +79,4 @@ p-value = 0.000009421
 
 <!--Discussion and conclusion here. If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason. Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+I use
